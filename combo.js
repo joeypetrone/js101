@@ -59,21 +59,30 @@ console.log(num);
 // Challenge #3
 
 const palFinder = (pal) => {
-    let palCheck = [];
-    for (let i = 0; i < pal.length; i++) {
-        palCheck.push(pal[i]);
+    if (Number.isInteger(pal)) {
+        pal = pal.toString();
     }
-    let thing = [];
-    for (let j = 0; j < pal.length; j++) {
-        thing.push(palCheck.pop());
-    }
-    palCheck = thing.join('');
-    return palCheck === pal;
+    const newPal = pal.toLowerCase().split(' ').join('');
+    console.log(newPal);
+    const revPal = newPal.split('').reverse().join('');
+    console.log(revPal);
+    return revPal === newPal;
 };
 
-console.log(palFinder('pap')); // true
-console.log(palFinder('cap')); // true
+// testing toString() and Number.isInteger()
+let thing = 567;
+thing = thing.toString();
+console.log(Number.isInteger(thing));
+console.log(thing);
 
+console.log(palFinder('pap')); // true
+console.log(palFinder('Racecar')); // true
+console.log(palFinder('Race car')); // true
+console.log(palFinder('Palindrome')); // false
+console.log(palFinder('This is false!')); // false
+console.log(palFinder('!Heb! !beH!')); // true
+console.log(palFinder(545)); // true
+console.log(palFinder(69900996)); //true
 
 // Challenge #4
 // Lawrence the wide mouth frog is particularly interested in the eating habits of other creatures.
