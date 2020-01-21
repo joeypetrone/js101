@@ -58,9 +58,22 @@ console.log(num);
 
 // Challenge #3
 
-const palindrome = (pal) => {
-
+const palFinder = (pal) => {
+    let palCheck = [];
+    for (let i = 0; i < pal.length; i++) {
+        palCheck.push(pal[i]);
+    }
+    let thing = [];
+    for (let j = 0; j < pal.length; j++) {
+        thing.push(palCheck.pop());
+    }
+    palCheck = thing.join('');
+    return palCheck === pal;
 };
+
+console.log(palFinder('pap')); // true
+console.log(palFinder('cap')); // true
+
 
 // Challenge #4
 // Lawrence the wide mouth frog is particularly interested in the eating habits of other creatures.
