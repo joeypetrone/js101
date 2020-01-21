@@ -50,7 +50,7 @@ const statusMaker = (emp) => {
     } else {
         emp.status = 'peasant';
     }
-    return emp
+    return emp;
 }
 
 console.log(statusMaker(employee));
