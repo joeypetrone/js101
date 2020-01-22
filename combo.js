@@ -62,7 +62,7 @@ const palFinder = (pal) => {
     if (Number.isInteger(pal)) {
         pal = pal.toString();
     }
-    const newPal = pal.toLowerCase().split(' ').join('');
+    const newPal = pal.toLowerCase().split('.').join('').split(' ').join('');
     console.log(newPal);
     const revPal = newPal.split('').reverse().join('');
     console.log(revPal);
@@ -83,6 +83,8 @@ console.log(palFinder('This is false!')); // false
 console.log(palFinder('!Heb! !beH!')); // true
 console.log(palFinder(545)); // true
 console.log(palFinder(69900996)); //true
+console.log(palFinder('Mr. Owl ate my metal worm')); //true
+
 
 // Challenge #4
 // Lawrence the wide mouth frog is particularly interested in the eating habits of other creatures.
